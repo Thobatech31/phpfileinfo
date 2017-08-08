@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<title>User registration and login with email verification | All About PHP</title>
+
+<!-- All in One SEO Pack 2.3.13.2 by Michael Torbert of Semper Fi Web Design[564,644] -->
+<link rel="canonical" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="All About PHP » Feed" href="http://www.allaboutphp.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="All About PHP » Comments Feed" href="http://www.allaboutphp.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="All About PHP » User registration and login with email verification Comments Feed" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/feed/">
+		<script src="./User registration and login with email verification _ All About PHP toba_files/rules-p-aRAyv335QWAKb.js.download"></script><script src="./User registration and login with email verification _ All About PHP toba_files/quant.js.download" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./User registration and login with email verification _ All About PHP toba_files/analytics.js.download"></script><script async="" src="./User registration and login with email verification _ All About PHP toba_files/gtm.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.allaboutphp.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./User registration and login with email verification _ All About PHP toba_files/wp-emoji-release.min.js.download" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="contact-form-7-css" href="./User registration and login with email verification _ All About PHP toba_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="rapidbar-front-css-css" href="./User registration and login with email verification _ All About PHP toba_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="rad_rapidology-open-sans-css" href="./User registration and login with email verification _ All About PHP toba_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="rad_rapidology-css-css" href="./User registration and login with email verification _ All About PHP toba_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-bootstrap-css" href="./User registration and login with email verification _ All About PHP toba_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-icons-css" href="./User registration and login with email verification _ All About PHP toba_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-fonts-css" href="./User registration and login with email verification _ All About PHP toba_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-style-css" href="./User registration and login with email verification _ All About PHP toba_files/style(2).css" type="text/css" media="all">
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/jquery.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/modernizr.min.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/functions.min.js.download"></script>
+<link rel="https://api.w.org/" href="http://www.allaboutphp.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.allaboutphp.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.allaboutphp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Dynamic Drop down Menu Using PHP and MySQL" href="http://www.allaboutphp.com/dynamic-drop-down-menu-using-php-and-mysql/">
+<link rel="next" title="Server Side Form Validations Using PHP" href="http://www.allaboutphp.com/server-side-form-validations-using-php/">
+<meta name="generator" content="WordPress 4.6.6">
+<link rel="shortlink" href="http://www.allaboutphp.com/?p=169">
+<link rel="alternate" type="application/json+oembed" href="http://www.allaboutphp.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.allaboutphp.com%2Flogin-registration-with-email-verification-forgot-password-using-php%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.allaboutphp.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.allaboutphp.com%2Flogin-registration-with-email-verification-forgot-password-using-php%2F&amp;format=xml">
+
+<!-- This site is using AdRotate v3.17 to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->
+<style type="text/css"></style><link rel="pingback" href="http://www.allaboutphp.com/xmlrpc.php"><link rel="icon" href="http://www.allaboutphp.com/wp-content/uploads/2016/11/cropped-AllAboutphp-logo-32x32.png" sizes="32x32">
+<link rel="icon" href="http://www.allaboutphp.com/wp-content/uploads/2016/11/cropped-AllAboutphp-logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.allaboutphp.com/wp-content/uploads/2016/11/cropped-AllAboutphp-logo-180x180.png">
+<meta name="msapplication-TileImage" content="http://www.allaboutphp.com/wp-content/uploads/2016/11/cropped-AllAboutphp-logo-270x270.png">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLZH6NN');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/ice.js.download" async=""></script><style type="text/css">.backpack.dropzone {
+  font-family: 'SF UI Display', 'Segoe UI';
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  font-weight: lighter;
+  color: white;
+  will-change: right;
+  z-index: 2147483647;
+  bottom: 20%;
+  background: #333;
+  position: fixed;
+  user-select: none;
+  transition: left .5s, right .5s;
+  right: 0px; }
+  .backpack.dropzone .animation {
+    height: 80px;
+    width: 250px;
+    background: url("https://sxt.cdn.skype.com/assets/dropzone/hoverstate.png") left center; }
+  .backpack.dropzone .title::before {
+    content: 'Save to'; }
+  .backpack.dropzone.closed {
+    right: -250px; }
+  .backpack.dropzone.hover .animation {
+    animation: sxt-play-anim-hover 0.91s steps(21);
+    animation-fill-mode: forwards;
+    background: url("https://sxt.cdn.skype.com/assets/dropzone/hoverstate.png") left center; }
+
+@keyframes sxt-play-anim-hover {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -5250px; } }
+  .backpack.dropzone.saving .title::before {
+    content: 'Saving to'; }
+  .backpack.dropzone.saving .animation {
+    background: url("https://sxt.cdn.skype.com/assets/dropzone/saving_loop.png") left center;
+    animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+@keyframes sxt-play-anim-saving {
+  100% {
+    background-position: -14750px; } }
+  .backpack.dropzone.saved .title::before {
+    content: 'Saved to'; }
+  .backpack.dropzone.saved .animation {
+    background: url("https://sxt.cdn.skype.com/assets/dropzone/saved.png") left center;
+    animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+@keyframes sxt-play-anim-saved {
+  100% {
+    background-position: -5000px; } }
+</style><script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/gsd"></script><style type="text/css"></style><script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/dcl.htm"></script><script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/dcl(1).htm"></script><script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/getads.htm"></script><script type="text/javascript" charset="UTF-8" src="./User registration and login with email verification _ All About PHP toba_files/dcl(1).htm"></script></head>
+
+<body class="single single-post postid-169 single-format-standard rad_rapidology">
+<a class="sr-only sr-only-focusable" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#content">Skip to main content</a>
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner">
+		<nav class="navbar navbar-default " role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="site-navigation-inner col-sm-12">
+						<div class="navbar-header">
+							<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							
+							
+							<div id="logo" il_cc1="1" il_cc2="1">
+								<p class="site-name">									<a class="navbar-brand" href="http://www.allaboutphp.com/" title="All About PHP" rel="home">All About PHP</a>
+								</p>							</div><!-- end of #logo -->
+
+							
+						</div>
+						<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-top-menu" class="nav navbar-nav"><li id="menu-item-66" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-66"><a title="PHP" href="http://www.allaboutphp.com/category/php/">PHP</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-67"><a title="MY SQL" href="http://www.allaboutphp.com/category/my-sql/">MY SQL</a></li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a title="Contact Me!" href="http://www.allaboutphp.com/contact-me/">Contact Me!</a></li>
+</ul></div>					</div>
+				</div>
+			</div>
+		</nav><!-- .site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+		<div class="top-section">
+								</div>
+
+		<div class="container main-content-area">
+            			<div class="row side-pull-left">
+				<div class="main-content-inner col-sm-12 col-md-8">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-169" class="post-169 post type-post status-publish format-standard hentry category-my-sql category-php tag-mysqldatabase tag-php-code-snippet tag-php-source-code tag-registration-and-login-form">
+		<div class="post-inner-content">
+		<header class="entry-header page-header">
+
+			<span><!--INFOLINKS_OFF--></span><span><!--INFOLINKS_OFF--></span><h1 class="entry-title ">User registration and login with email verification</h1><span><!--INFOLINKS_ON--></span><span><!--INFOLINKS_ON--></span>
+
+			<div class="entry-meta">
+				<span class="posted-on"><i class="fa fa-calendar"></i> <a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/" rel="bookmark"><time class="entry-date published" datetime="2016-01-26T17:30:11+00:00">January 26, 2016</time><time class="updated" datetime="2016-12-24T04:50:35+00:00">December 24, 2016</time></a></span><span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="http://www.allaboutphp.com/author/Kamal/">Kamal</a></span></span>
+								<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+					 <a href="http://www.allaboutphp.com/category/my-sql/" rel="category tag">MY SQL</a>, <a href="http://www.allaboutphp.com/category/php/" rel="category tag">PHP</a>				</span>
+								
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content" il_cc1="14" il_cc2="14">
+			<p>In this <span id="IL_AD11" class="IL_AD">tutorial</span>, we will look into&nbsp;Login Registration with Email Verification, Forgot <span id="IL_AD9" class="IL_AD">Password</span> Using PHP.<br>
+When running this code in local machine (localhost) email sending function won’t work also email verification needs a domain and a server to capture the call back from the user when they click on <span id="IL_AD4" class="IL_AD">the link</span>. Simply host this code in a real server in order to try out the full functionality.</p>
+<h2>Overview</h2>
+<p>For this project, we need 7 files in order to complete the task. So, let’s create the files. You need to keep all the files in same folders.<input type="hidden" name="IL_IN_ARTICLE" value="1" class="IL_IN_AUTO"><div style="display: none; height: 0px; overflow: hidden; transform-style: preserve-3d; padding: 0px; transition-duration: 1000ms; transition-timing-function: ease-in;"><div style="position: relative; display: block; text-align: center; padding: 0px; margin: 0px auto; font-size: 0px; overflow: hidden; width: 300px; height: 250px;">                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute;left:auto;top:auto;bottom:0px;right:0px;max-width:19px;max-height:19px;z-index:1000000" x="0px" y="0px" width="20.033px" height="19.184px" viewBox="0 0 20.033 19.184" xml:space="preserve">                    <g>                                                    <path style="opacity:0.8;fill:#E2E2E2;" d="M20.033,0.015v19.168H0.009C0,19.184,0,19.043,0,18.989                                C0,8.509,8.543,0,19.032,0C19.356,0,20.033-0.003,20.033,0.015z"></path>                                                <g>                            <circle style="fill:#208CE5;" cx="8.515" cy="6.883" r="0.844"></circle>                            <path style="fill:#003366;" d="M14.194,9.237h-0.883c-1.368,0-2.488,1.12-2.488,2.488v2.776c0,0.017,0.001,0.033,0.002,0.049                                v0.414c0,0.456-0.373,0.828-0.828,0.828H9.96c-0.456,0-0.828-0.373-0.828-0.828v-1.832h0.001V9.405c0-0.001,0-0.002,0-0.002                                c0-0.09-0.071-0.162-0.16-0.166H8.055C7.968,9.24,7.9,9.309,7.897,9.396v3.736H7.9c-0.001,0.028-0.003,0.056-0.003,0.085v1.775                                c0,1.12,0.916,2.036,2.036,2.036h0.092c1.12,0,2.036-0.916,2.036-2.036v-0.436v-0.369v-2.305c0.007-0.788,0.651-1.432,1.439-1.432                                h0.508c0.788,0,1.432,0.644,1.44,1.432v2.305v0.369v2.304c0.001,0.002,0.001,0.003,0.001,0.004c0,0.089,0.071,0.16,0.158,0.164                                h0.918c0.086-0.003,0.155-0.071,0.158-0.157v-2.231v-0.452v-2.463C16.682,10.356,15.562,9.237,14.194,9.237z"></path>                        </g>                    </g>                    <g>                        <rect x="8.033" y="7.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="8.033" y="5.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="6.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="6.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="5.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="5.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="7.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="7.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="9.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="12.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="13.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="14.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="15.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="16.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="10.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="11.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="12.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="13.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="14.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="7.033" y="9.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="10.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="11.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="12.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="13.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="14.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="15.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                    </g>                    </svg>                            <div style="cursor:pointer;-webkit-perspective: 1000; -webkit-transform-origin: 0 0; transform-origin: 0 0; -ms-transform-origin: 0 0; -webkit-transform:scale(1) ; transform:scale(1) ; -ms-transform:scale(1)">            </div><div style="display:block;-webkit-perspective: 1000; -webkit-transform-origin: 0 0; transform-origin: 0 0; -ms-transform-origin: 0 0; -webkit-transform:scale(1) ; transform:scale(1) ; -ms-transform:scale(1);">    <div cls="IL_BASE" style="width:300px; height:250px;">        <iframe src="./User registration and login with email verification _ All About PHP toba_files/blank.html" width="300" height="250" frameborder="0" scrolling="no"></iframe>    </div>    <form method="post" action="http://router.infolinks.com/echo.htm?hookId=IL_IN_ARTICLE0" target="ad_frame_IL_IN_ARTICLE0_0" accept-charset="utf-8" style="display:none;"> <input type="hidden" value="%3Etpircs%2F%3C%3E%22191924%3Ddigatwc%261%3Dtenpwc%26052%3Dthgiehwc%26003%3Dhtdiwwc%26889955%3Ddipwc%26052X003%3Dtamrofdawc%26002%3Dnurwc%26DAWEIV%3Dnoitca%3Fxpsa.sjteg%2FhsilbuPgaT%2Fmoc.bewtxetnoc.gat%2F%2F%3Asptth%22%3Dcrs%20tpircs%3C"> <input type="hidden" value="1789931"> <input type="hidden" value="5"> <input type="hidden" value="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/"> <input type="hidden" value="1609.003"></form>  </div></div></div></p>
+<ul>
+<li>Configdb.php</li>
+<li>Confirm.php</li>
+<li>Index.php</li>
+<li>Login.php</li>
+<li>Logout.php</li>
+<li>Home.php</li>
+<li>Register.php</li>
+</ul>
+<p><span id="more-169"></span></p>
+<h2>Database Schema</h2>
+<p>Let us start by creating a database needed to store user credentials. I will be naming my database “userreg”. You can name your’s anything you like. But something relevent to the project would be good.<br>
+Then add the necessary tables to the database. You can use the code snippet below to add tables to the database.</p>
+<pre>CREATE TABLE `user` (
+`id` INT( 50 ) NOT NULL AUTO_INCREMENT ,
+`username` VARCHAR( 50 ) NOT NULL ,
+`email` VARCHAR( 100 ) NOT NULL ,
+`password` VARCHAR( 20 ) NOT NULL ,
+`com_code` VARCHAR( 255 ) default NULL,
+PRIMARY KEY ( `id` )
+) ENGINE = InnoDB</pre>
+<h2>Configdb.php</h2>
+<p>This <span id="IL_AD10" class="IL_AD">file</span> contains all the configuration that is needed in order to establish a successful connection with the database.<br>
+If the user intendeds to change the SQL properties he/she can change the following attributes in order to make the <span id="IL_AD7" class="IL_AD">application</span> work.</p>
+<pre>&lt;?php
+$mysqli=mysqli_connect('localhost','root','','userreg') or die("Database Error");
+?&gt;</pre>
+<h2>Confirm.php</h2>
+<p>This file contains the code that deletes the key relevant to the user in the database when a user clicks on the confirmation link sent via mail.<br>
+When the user redirects to this page it extracts the key from a user and issues a query which will search the key and delete it from the database. So the user gets confirmed.<br>
+In other terms, it’s a page that confirms the user registration.</p>
+<pre>&lt;?php
+include('configdb.php');
+$passkey = $_GET['passkey'];
+$sql = "UPDATE user SET com_code=NULL WHERE com_code='$passkey'";
+$result = mysqli_query($mysqli,$sql) or die(mysqli_error());
+if($result)
+{
+echo '&lt;div&gt;Your account is now active. You may now &lt;a href="login.php"&gt;Log in&lt;/a&gt;&lt;/div&gt;';
+}
+else
+{
+echo "Some error occur.";
+}
+?&gt;</pre>
+<h2>Index.php</h2>
+<p>This file contains HTML <span id="IL_AD6" class="IL_AD">registration code</span>, sign in the <span id="IL_AD8" class="IL_AD">button</span> as well as the server side code which captures registration details. When a user clicks on the submit button all the information will be captured from the form and the data is assigned to a SESSION variable.</p>
+<pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;title&gt;Sing Up&lt;/title&gt;
+&lt;style&gt;
+label{
+width:100px;
+float:left;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+session_start();
+if(isset($_SESSION['error']))
+{
+echo '&lt;p&gt;'.$_SESSION['error']['username'].'&lt;/p&gt;';
+echo '&lt;p&gt;'.$_SESSION['error']['email'].'&lt;/p&gt;';
+echo '&lt;p&gt;'.$_SESSION['error']['password'].'&lt;/p&gt;';
+unset($_SESSION['error']);
+}
+?&gt;
+&lt;div class="signup_form"&gt;
+&lt;form action="register.php" method="post" &gt;
+&lt;p&gt;
+&lt;label for="username"&gt;User Name:&lt;/label&gt;
+&lt;input name="username" type="text" id="username" size="30"/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;label for="email"&gt;E-mail:&lt;/label&gt;
+&lt;input name="email" type="text" id="email" size="30"/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input name="password" type="password" id="password" size="30 "/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;input name="submit" type="submit" value="Submit"/&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="login.php"&gt;Login&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2>Login.php</h2>
+<p>This file contains HTML <span id="IL_AD5" class="IL_AD">login page</span> code as well as login filter for users who has not verified their account using the link sent via email.<br>
+First data is captured from the form and assigned to local variables by POST method then the data is sent to database in order to validate them if results are found then it will redirect the user to <span id="IL_AD3" class="IL_AD">the homepage</span>.<br>
+Also, the new SESSION will start.</p>
+<pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;title&gt;Login&lt;/title&gt;
+&lt;style&gt;
+label{
+width:100px;
+float:left;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+session_start();
+include('configdb.php');
+if(isset($_POST['submit']))
+{
+$email = trim($_POST['email']);
+$password = trim($_POST['password']);
+$query = "SELECT * FROM user WHERE email='$email' AND password='$password' AND com_code IS NULL";
+$result = mysqli_query($mysqli,$query)or die(mysqli_error());
+$num_row = mysqli_num_rows($result);
+$row=mysqli_fetch_array($result);
+if( $num_row ==1 )
+{
+$_SESSION['user_name']=$row['username'];
+header("Location: member.php");
+exit;
+}
+else
+{
+echo 'false';
+}
+}
+?&gt;
+&lt;div class="login_form"&gt;
+&lt;form action="login.php" method="post" &gt;
+&lt;p&gt;
+&lt;label for="email"&gt;E-mail:&lt;/label&gt;
+&lt;input name="email" type="text" id="email" size="30"/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input name="password" type="password" id="password" size="30"/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;input name="submit" type="submit" value="Submit"/&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2>Logout.php</h2>
+<p>This Log-out code will destroy user session and unset $_SESSION variables values.</p>
+<pre>&lt;?php
+session_start();
+unset($_SESSION['user_name']);
+header('Location: index.php');
+?&gt;</pre>
+<h2>home.php</h2>
+<p>This code will be rendered upon successful login and this page contains the link to logout.php in order to a user to logout.</p>
+<pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;title&gt;Tutorial-10&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+session_start();
+if($_SESSION['user_name'] == '')
+{
+header("Location: index.php");
+exit;
+}
+echo "Hi ".$_SESSION['user_name'];
+?&gt;
+&lt;a href="logout.php"&gt;Logout&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2>Register.php</h2>
+<p>This file contains the code which is used for user registration also the email sending code is also <span id="IL_AD12" class="IL_AD">available</span> in the following code segment. In order to test users will need to edit this file replacing their domains instead of http://www.exampleDomain.com/confirm.php?passkey=$com_code”</p>
+<pre>&lt;?php
+session_start();
+include('configdb.php');
+if(isset($_POST['submit']))
+{
+//whether the username is blank
+if($_POST['username'] == '')
+{
+$_SESSION['error']['username'] = "User Name is required.";
+}
+//whether the email is blank
+if($_POST['email'] == '')
+{
+$_SESSION['error']['email'] = "E-mail is required.";
+}
+else
+{
+//whether the email format is correct
+if(preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $_POST['email']))
+{
+//if it has the correct format whether the email has already exist
+$email= $_POST['email'];
+$sql1 = "SELECT * FROM user WHERE email = '$email'";
+$result1 = mysqli_query($mysqli,$sql1) or die(mysqli_error());
+if (mysqli_num_rows($result1) &gt; 0)
+{
+$_SESSION['error']['email'] = "This Email is already used.";
+}
+}
+else
+{
+//this error will set if the email format is not correct
+$_SESSION['error']['email'] = "Your email is not valid.";
+}
+}
+//whether the password is blank
+if($_POST['password'] == '')
+{
+$_SESSION['error']['password'] = "Password is required.";
+}
+
+//if the error exist, we will go to <span id="IL_AD2" class="IL_AD">registration form</span>
+if(isset($_SESSION['error']))
+{
+header("Location: index.php");
+exit;
+}
+else
+{
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$com_code = md5(uniqid(rand()));
+
+$sql2 = "INSERT INTO user (username, email, password, com_code) VALUES ('$username', '$email', '$password', '$com_code')";
+$result2 = mysqli_query($mysqli,$sql2) or die(mysqli_error());
+
+if($result2)
+{
+$to = $email;
+$subject = "Confirmation from TutsforWeb to $username";
+$header = "TutsforWeb: Confirmation from TutsforWeb";
+$message = "Please click the link below to verify and <span id="IL_AD1" class="IL_AD">activate your account</span>. rn";
+$message .= "http://www.exampleDomain.com/confirm.php?passkey=$com_code";
+
+$sentmail = mail($to,$subject,$message,$header);
+
+if($sentmail)
+{
+echo "Your Confirmation link Has Been Sent To Your Email Address.";
+}
+else
+{
+echo "Cannot send Confirmation link to your e-mail address";
+}
+}
+}
+}
+?&gt;</pre>
+<p>That’s it bundle the files in a folder and test in a web-server and you have completed creating your Registration and Log-in system with Email Verification and Forgot Password Using PHP and My SQL.</p>
+<h3>Bonus</h3>
+<p>You can download the Full source code here.</p>
+<p style="min-height: 292px;" class=" IL_IC_MIN">If you face any challenge during the process feel free to comment or direct a mail I would happy to help you.<br>
+If you find this post helpful don’t forget to share it with your friends and community.<input type="hidden" name="IL_IN_CONTENT" value="2" class="IL_IN_AUTO"><div class="IL_BASE" style="margin: 0px auto; padding: 10px 0px; cursor: pointer; width: 648px;"><div id="IL_IN_CONTENT_CONTAINER_0" class="IL_BASE" style="position: relative; display: block; text-align: center; padding: 0px; margin: 0px auto; font-size: 0px; overflow: hidden; width: 214px; height: 178px;">                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="IL_IN_CONTENT_LOGO_0" class="IL_BASE IL_LOGO" style="position: absolute;left:auto;top:auto;bottom:0px;right:0px;max-width:19px;max-height:19px;z-index:1000000" x="0px" y="0px" width="20.033px" height="19.184px" viewBox="0 0 20.033 19.184" xml:space="preserve">                    <g id="Logo_PlaceHolder">                                                    <path id="Circle" style="opacity:0.8;fill:#E2E2E2;" d="M20.033,0.015v19.168H0.009C0,19.184,0,19.043,0,18.989                                C0,8.509,8.543,0,19.032,0C19.356,0,20.033-0.003,20.033,0.015z"></path>                                                <g id="logo">                            <circle style="fill:#208CE5;" cx="8.515" cy="6.883" r="0.844"></circle>                            <path style="fill:#003366;" d="M14.194,9.237h-0.883c-1.368,0-2.488,1.12-2.488,2.488v2.776c0,0.017,0.001,0.033,0.002,0.049                                v0.414c0,0.456-0.373,0.828-0.828,0.828H9.96c-0.456,0-0.828-0.373-0.828-0.828v-1.832h0.001V9.405c0-0.001,0-0.002,0-0.002                                c0-0.09-0.071-0.162-0.16-0.166H8.055C7.968,9.24,7.9,9.309,7.897,9.396v3.736H7.9c-0.001,0.028-0.003,0.056-0.003,0.085v1.775                                c0,1.12,0.916,2.036,2.036,2.036h0.092c1.12,0,2.036-0.916,2.036-2.036v-0.436v-0.369v-2.305c0.007-0.788,0.651-1.432,1.439-1.432                                h0.508c0.788,0,1.432,0.644,1.44,1.432v2.305v0.369v2.304c0.001,0.002,0.001,0.003,0.001,0.004c0,0.089,0.071,0.16,0.158,0.164                                h0.918c0.086-0.003,0.155-0.071,0.158-0.157v-2.231v-0.452v-2.463C16.682,10.356,15.562,9.237,14.194,9.237z"></path>                        </g>                    </g>                    <g id="Layer_2">                        <rect x="8.033" y="7.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="8.033" y="5.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="6.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="6.184" style="opacity:0.6;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="5.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="5.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="7.033" y="7.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="7.184" style="opacity:0.2;fill:#208CE5;" width="1" height="1"></rect>                        <rect x="9.033" y="9.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="12.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="13.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="14.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="15.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="15.033" y="16.184" style="opacity:0.6;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="10.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="11.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="12.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="13.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="9.033" y="14.184" style="opacity:0.2;fill:#003366;" width="1" height="1"></rect>                        <rect x="7.033" y="9.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="10.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="11.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="12.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="13.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="14.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                        <rect x="7.033" y="15.184" style="opacity:0.3;fill:#E2E2E2;" width="1" height="1"></rect>                    </g>                    </svg>                            <div class="IL_BASE" style="cursor:pointer;-webkit-perspective: 1000; -webkit-transform-origin: 0 0; transform-origin: 0 0; -ms-transform-origin: 0 0; -webkit-transform:scale(1) ; transform:scale(1) ; -ms-transform:scale(1)">            </div><div data-il_in_content0_2_0_njexfm51bgxfmq="" style="display: none"></div><div id="IL_IN_CONTENT_CONTAINER_0" class="IL_BASE" style=";position:relative;display:block;text-align:center; padding:0;margin: 0 auto; font-size:0; overflow:hidden;">            <div class="IL_BASE" style="cursor:pointer;-webkit-perspective: 1000; -webkit-transform-origin: 0 0; transform-origin: 0 0; -ms-transform-origin: 0 0; -webkit-transform:scale(1) ; transform:scale(1) ; -ms-transform:scale(1)">    <img src="./User registration and login with email verification _ All About PHP toba_files/fb_214x178-3.jpg" class="IL_BASE" height="178" width="214" alt="" style="width: 214px; height: 178px;">        </div></div></div></div></p>
+<div class="rad_rapidology_inline_form rad_rapidology_optin rad_rapidology_optin_12">
+				<style type="text/css">.rad_rapidology .rad_rapidology_optin_12 .rad_rapidology_form_content { background-color: #3b3b3b !important; } .rad_rapidology .rad_rapidology_optin_12 .rad_rapidology_form_container .rad_rapidology_form_header { background-color: #ffffff !important; } .rad_rapidology .rad_rapidology_optin_12 .rad_rapidology_form_content button { background-color: #e74c3c !important; } .rad_rapidology .rad_rapidology_optin_12 .rad_rapidology_form_content button { background-color: #e74c3c !important; } .rad_rapidology .rad_rapidology_optin_12 h2, .rad_rapidology .rad_rapidology_optin_12 h2 span, .rad_rapidology .rad_rapidology_optin_12 h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.rad_rapidology .rad_rapidology_optin_12 p, .rad_rapidology .rad_rapidology_optin_12 p span, .rad_rapidology .rad_rapidology_optin_12 p strong, .rad_rapidology .rad_rapidology_optin_12 form input, .rad_rapidology .rad_rapidology_optin_12 form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } </style>
+				<div class="rad_rapidology_form_container rad_rapidology_popup_container rad_rapidology_rounded rad_rapidology_form_text_dark rad_rapidology_form_bottom rad_rapidology_inline_2_fields">
+					
+			<div class="rad_rapidology_form_container_wrapper clearfix">
+				<div class="rad_rapidology_header_outer">
+					<div class="rad_rapidology_form_header rad_rapidology_header_text_dark">
+						
+						<div class="rad_rapidology_form_text" il_cc1="1" il_cc2="1">
+						<h2>Download the complete source code.</h2><p>Grab the the free working demo Intantly!</p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="rad_rapidology_form_content rad_rapidology_2_fields rad_rapidology_bottom_inline">
+					
+					
+					<form method="post" class="clearfix" il_cc1="2" il_cc2="2">
+						<p class="rad_rapidology_popup_input rad_rapidology_subscribe_name">
+								<input placeholder="Name" maxlength="50">
+							</p>
+						<p class="rad_rapidology_popup_input rad_rapidology_subscribe_email ">
+							<input placeholder="Email">
+						</p>
+
+						<button data-optin_id="optin_12" data-service="mailchimp" data-list_id="398b55d8d8" data-page_id="169" data-post_name="" data-cookie="" data-account="AllAboutPhp" data-disable_dbl_optin="" data-redirect_url="https://app.box.com/s/mr4gf1rv4dujar5ljryj7foto3h398g1" data-redirect="new_window" data-success_delay="5" data-center_webhook_url="" class="rad_rapidology_submit_subscription">
+							<span class="rad_rapidology_subscribe_loader"></span>
+							<span class="rad_rapidology_button_text rad_rapidology_button_text_color_light">Download Now</span>
+						</button>
+						<div class="consent_wrapper" style="margin-top:10px;"></div>
+					</form>
+
+					
+					<div class="rad_rapidology_success_container">
+						<span class="rad_rapidology_success_checkmark"></span>
+					</div>
+					<h2 class="rad_rapidology_success_message" il_cc1="1" il_cc2="1"><p>You have Successfully Suscribed!</p></h2>
+					
+				</div>
+			</div>
+			<span class="rad_rapidology_close_button"></span>
+				</div>
+				<div class="rad_power rad_power_mode_inline">
+					<span class="rad_power_box_mode_inline">
+						<a href="http://www.rapidology.com/?utm_campaign=rp-rp&amp;utm_medium=powered-by-badge" target="_blank">Powered by<span class="rad_power_logo">&nbsp;</span><span class="rad_power_text">Rapidology</span></a>
+					</span>
+				</div>
+			</div>
+					</div><!-- .entry-content -->
+
+		<footer class="entry-meta">
+
+	    		      <!-- tags -->
+	      <div class="tagcloud" style="display: block;">
+
+	          <a href="http://www.allaboutphp.com/tag/mysqldatabase/">MySQLDatabase</a> <a href="http://www.allaboutphp.com/tag/php-code-snippet/">PHP code snippet</a> <a href="http://www.allaboutphp.com/tag/php-source-code/">PHP Source code</a> <a href="http://www.allaboutphp.com/tag/registration-and-login-form/">Registration and Login form</a> 
+	      </div>
+	      <!-- end tags -->
+	      
+		</footer><!-- .entry-meta -->
+	</div>
+
+	
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			18 thoughts on “<span>User registration and login with email verification</span>”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-20" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-20" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/542e7f798f7b1b7a5e15b0385bd67c69" srcset="http://2.gravatar.com/avatar/542e7f798f7b1b7a5e15b0385bd67c69?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">vinay</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-20">
+							<time datetime="2016-03-21T19:58:26+00:00">
+								March 21, 2016 at 7:58 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="3" il_cc2="3">
+					<p>hi i will see login and singup script on u r website i want small dout when visitor registered form  automatic ip address and visitor divice detecto and update database(mySql) how to make plsese send that sorce code  on my email </p>
+<p>Thankyou…..</p>
+<p>Waiting for replay …<br>
+bye</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=20#respond" onclick="return addComment.moveForm( &quot;div-comment-20&quot;, &quot;20&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to vinay" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-21" class="comment byuser comment-author-Kamal bypostauthor odd alt depth-2">
+			<article id="div-comment-21" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/cbe65e10dd0d6da67956ceaa12e78166" srcset="http://0.gravatar.com/avatar/cbe65e10dd0d6da67956ceaa12e78166?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">kamal</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-21">
+							<time datetime="2016-04-13T14:07:06+00:00">
+								April 13, 2016 at 2:07 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Hi Vinay, Really appreciate your request. I will make a tutorial and post it for you. Till then keep reading my other posts and I would recommend signing up for the mailing list such that I can notify you instantly when the tutorial is ready.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=21#respond" onclick="return addComment.moveForm( &quot;div-comment-21&quot;, &quot;21&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to kamal" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-22" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-22" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/ac0d6c75d04a83a408bf9361c9f0dcc8" srcset="http://1.gravatar.com/avatar/ac0d6c75d04a83a408bf9361c9f0dcc8?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">dhaval patel</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-22">
+							<time datetime="2016-04-19T11:45:45+00:00">
+								April 19, 2016 at 11:45 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="2" il_cc2="2">
+					<p>( ! ) Warning: mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port" setting in php.ini or use ini_set() in D:wampwwwlogonregister.php on line 66</p>
+<p>how to fix it</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=22#respond" onclick="return addComment.moveForm( &quot;div-comment-22&quot;, &quot;22&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to dhaval patel" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-23" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-23" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/cbe7b49ecc5d34f6569599a76a7a12b4" srcset="http://0.gravatar.com/avatar/cbe7b49ecc5d34f6569599a76a7a12b4?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">siobhan</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-23">
+							<time datetime="2016-06-11T07:00:28+00:00">
+								June 11, 2016 at 7:00 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="2" il_cc2="2">
+					<p>hi<br>
+just installed this code on my hosting server and i actually got the registration part working. the emails get sent out and i can confirm them, but when i go to login its always bringing up false. </p>
+<p>its the only tutorial i could find that did registration/login with mysqli and i can actually see the data on my server</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=23#respond" onclick="return addComment.moveForm( &quot;div-comment-23&quot;, &quot;23&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to siobhan" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-24" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-24" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/ff3b8f2d0bad9db7557067bb1a520870" srcset="http://0.gravatar.com/avatar/ff3b8f2d0bad9db7557067bb1a520870?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Lee</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-24">
+							<time datetime="2016-07-06T22:03:07+00:00">
+								July 6, 2016 at 10:03 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="2" il_cc2="2">
+					<p>Thanks for the code, this works perfect! I changed the password to a password_hash function for extra security, otherwise this is perfect. I have just one question.</p>
+<p>You mention at the start there is a ‘forgot password’ function, however this doesnt seem to be include? Do you have a tutorial for this function?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=24#respond" onclick="return addComment.moveForm( &quot;div-comment-24&quot;, &quot;24&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Lee" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-25" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-25" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/9fd05a6a5e2dfe4fd200bb903630d005" srcset="http://0.gravatar.com/avatar/9fd05a6a5e2dfe4fd200bb903630d005?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">moloco</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-25">
+							<time datetime="2016-08-16T04:48:35+00:00">
+								August 16, 2016 at 4:48 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Thank you so much. i got a question. how can i change the sender of the email?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=25#respond" onclick="return addComment.moveForm( &quot;div-comment-25&quot;, &quot;25&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to moloco" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-26" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-26" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/8a784f092196b5518442666a3290bf5d" srcset="http://2.gravatar.com/avatar/8a784f092196b5518442666a3290bf5d?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Alex</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-26">
+							<time datetime="2016-08-31T19:07:55+00:00">
+								August 31, 2016 at 7:07 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="2" il_cc2="2">
+					<p>( ! ) Warning: mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port" setting in php.ini or use ini_set() in C:wampwwwloginregister.php on line 66</p>
+<p>this error is there plzzzz help me sir.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=26#respond" onclick="return addComment.moveForm( &quot;div-comment-26&quot;, &quot;26&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Alex" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-27" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-27" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/8a784f092196b5518442666a3290bf5d" srcset="http://2.gravatar.com/avatar/8a784f092196b5518442666a3290bf5d?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Alex</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-27">
+							<time datetime="2016-09-01T16:25:41+00:00">
+								September 1, 2016 at 4:25 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="2" il_cc2="2">
+					<p>( ! ) Warning: mail(): Failed to connect to mailserver at “localhost” port 25, verify your “SMTP” and “smtp_port” setting in php.ini or use ini_set() in D:wampwwwlogonregister.php on line 66</p>
+<p>how to fix it</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=27#respond" onclick="return addComment.moveForm( &quot;div-comment-27&quot;, &quot;27&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Alex" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-28" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-28" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/4060aa2a13d0680c8ac3c81f98baf0f2" srcset="http://1.gravatar.com/avatar/4060aa2a13d0680c8ac3c81f98baf0f2?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Shiela May</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-28">
+							<time datetime="2016-10-03T05:07:41+00:00">
+								October 3, 2016 at 5:07 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>there is an error saying “Cannot send Confirmation link to your e-mail address”.<br>
+I just downloaded the source code.<br>
+please help..</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=28#respond" onclick="return addComment.moveForm( &quot;div-comment-28&quot;, &quot;28&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Shiela May" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-30" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-30" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/5003b3664f3a243ca8a144b30cf9bbb7" srcset="http://2.gravatar.com/avatar/5003b3664f3a243ca8a144b30cf9bbb7?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://www.allphptricks.com/" rel="external nofollow" class="url">Javed Ur Rehman</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-30">
+							<time datetime="2016-11-10T12:56:02+00:00">
+								November 10, 2016 at 12:56 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Dear Kamal this is very good tutorial, i found it very helpful. I also wrote a tutorial about it, hope you like it too.<br>
+ <a href="http://www.allphptricks.com/simple-user-registration-login-script-in-php-and-mysqli/" rel="nofollow">http://www.allphptricks.com/simple-user-registration-login-script-in-php-and-mysqli/</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=30#respond" onclick="return addComment.moveForm( &quot;div-comment-30&quot;, &quot;30&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Javed Ur Rehman" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-31" class="comment byuser comment-author-Kamal bypostauthor even depth-2">
+			<article id="div-comment-31" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/cbe65e10dd0d6da67956ceaa12e78166" srcset="http://0.gravatar.com/avatar/cbe65e10dd0d6da67956ceaa12e78166?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">kamal</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-31">
+							<time datetime="2016-11-17T07:06:54+00:00">
+								November 17, 2016 at 7:06 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Hi Javed,<br>
+Let me know how the post is performing and if you need any help I would be glad to help.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=31#respond" onclick="return addComment.moveForm( &quot;div-comment-31&quot;, &quot;31&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to kamal" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-353" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-353" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/995ccb00ee15e928e59b89699b0c2e8f" srcset="http://0.gravatar.com/avatar/995ccb00ee15e928e59b89699b0c2e8f?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Sahiir</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-353">
+							<time datetime="2016-12-01T09:54:12+00:00">
+								December 1, 2016 at 9:54 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Appreciated. All is working good. Please post forgot password code as well in it. Thanks</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=353#respond" onclick="return addComment.moveForm( &quot;div-comment-353&quot;, &quot;353&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Sahiir" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-514" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-514" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/746cd1cabea668e4c43d9fec75efdd9c" srcset="http://1.gravatar.com/avatar/746cd1cabea668e4c43d9fec75efdd9c?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Ultra Gamer Ph</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-514">
+							<time datetime="2016-12-24T02:18:44+00:00">
+								December 24, 2016 at 2:18 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>how can i donwload this kind of file.  Please put a link</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=514#respond" onclick="return addComment.moveForm( &quot;div-comment-514&quot;, &quot;514&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Ultra Gamer Ph" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-516" class="comment byuser comment-author-Kamal bypostauthor odd alt depth-2">
+			<article id="div-comment-516" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/cbe65e10dd0d6da67956ceaa12e78166" srcset="http://0.gravatar.com/avatar/cbe65e10dd0d6da67956ceaa12e78166?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Kamal</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-516">
+							<time datetime="2016-12-24T04:08:07+00:00">
+								December 24, 2016 at 4:08 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>The broken link has been fixed. please retry.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=516#respond" onclick="return addComment.moveForm( &quot;div-comment-516&quot;, &quot;516&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Kamal" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-646" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-646" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/de019f52dc6c9715727664988d3e3ef0" srcset="http://1.gravatar.com/avatar/de019f52dc6c9715727664988d3e3ef0?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Prathamesh khedekar</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-646">
+							<time datetime="2017-01-11T15:43:43+00:00">
+								January 11, 2017 at 3:43 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>thanks mate</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=646#respond" onclick="return addComment.moveForm( &quot;div-comment-646&quot;, &quot;646&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Prathamesh khedekar" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-2348" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-2348" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/b00931302d1b3be7bfe8e50a19a028bd" srcset="http://2.gravatar.com/avatar/b00931302d1b3be7bfe8e50a19a028bd?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Rahmat69_GT</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-2348">
+							<time datetime="2017-03-16T12:22:15+00:00">
+								March 16, 2017 at 12:22 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>no member.php. fix it please.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=2348#respond" onclick="return addComment.moveForm( &quot;div-comment-2348&quot;, &quot;2348&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Rahmat69_GT" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-2483" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-2483" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/a972bf92f130982eea26a9a30b7f374b" srcset="http://1.gravatar.com/avatar/a972bf92f130982eea26a9a30b7f374b?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">drago</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-2483">
+							<time datetime="2017-03-18T16:41:36+00:00">
+								March 18, 2017 at 4:41 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>After registration, no download link for source code…. Can you fix it?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=2483#respond" onclick="return addComment.moveForm( &quot;div-comment-2483&quot;, &quot;2483&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to drago" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-2802" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-2802" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./User registration and login with email verification _ All About PHP toba_files/60d4c1981aa5c675a923274048b0b310" srcset="http://0.gravatar.com/avatar/60d4c1981aa5c675a923274048b0b310?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Aishwarya</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#comment-2802">
+							<time datetime="2017-03-31T02:31:17+00:00">
+								March 31, 2017 at 2:31 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" il_cc1="1" il_cc2="1">
+					<p>Hi kamal, this tutorial works awesome, do you have any similar kind of tutorial for “commenting system” similar to this, i mean the commenting section in this webiste. Any user can post queries and any user can reply to it by clicking the reply button.<br>
+Thanks in advance.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/?replytocom=2802#respond" onclick="return addComment.moveForm( &quot;div-comment-2802&quot;, &quot;2802&quot;, &quot;respond&quot;, &quot;169&quot; )" aria-label="Reply to Aishwarya" style="display: inline;">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+						<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.allaboutphp.com/login-registration-with-email-verification-forgot-password-using-php/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="http://www.allaboutphp.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="" il_cc1="8" il_cc2="8">
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit btn btn-default" value="Post Comment" style="display: inline-block;"> <input type="hidden" name="comment_post_ID" value="169" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="728eae64f0"></p><p style="display: none;"></p>				<input type="hidden" id="ak_js" name="ak_js" value="1501848680632"></form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.allaboutphp.com/dynamic-drop-down-menu-using-php-and-mysql/" rel="prev"><i class="fa fa-chevron-left"></i> <span class="post-title">Dynamic&nbsp;Drop&nbsp;down&nbsp;Menu&nbsp;Using&nbsp;PHP&nbsp;and&nbsp;MySQL</span></a></div><div class="nav-next"><a href="http://www.allaboutphp.com/server-side-form-validations-using-php/" rel="next"><span class="post-title">Server Side Form Validations Using PHP <i class="fa fa-chevron-right"></i></span></a></div></div>
+	</nav>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+</div>
+	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+		<div class="well">
+						<aside id="text-2" class="widget widget_text">			<div class="textwidget"><script type="text/javascript">
+	atOptions = {
+		'key' : '4a79cec1667fc6f3db3d4a655d9998b9',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bnserving.com/invoke.js"></scr' + 'ipt>');
+</script><script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/invoke.js.download"></script><iframe allowtransparency="true" frameborder="0" framespacing="0" height="250" scrolling="no" src="./User registration and login with email verification _ All About PHP toba_files/watch.html" width="300"></iframe></div>
+		</aside><aside id="search-2" class="widget widget_search">
+<form role="search" method="get" class="form-search" action="http://www.allaboutphp.com/">
+  <div class="input-group">
+  	<label class="screen-reader-text" for="s">Search for:</label>
+    <input type="text" class="form-control search-query" placeholder="Search…" value="" name="s" title="Search for:">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Search" style=""><span class="glyphicon glyphicon-search"></span></button>
+    </span>
+  </div>
+</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://www.allaboutphp.com/simple-html-form-validation-using-jquery/">Simple HTML Form Validation Using JQuery</a>
+						</li>
+					<li>
+				<a href="http://www.allaboutphp.com/easy-ajax-image-upload-and-view-with-jquery-php/">Easy Ajax Image Upload and view with JQuery, PHP</a>
+						</li>
+					<li>
+				<a href="http://www.allaboutphp.com/php-login-and-registration-script-with-pdo-and-oop/">PHP Login and Registration Script with PDO and OOP</a>
+						</li>
+					<li>
+				<a href="http://www.allaboutphp.com/php-ajax-live-comment-system/">PHP Ajax Live Comment System</a>
+						</li>
+					<li>
+				<a href="http://www.allaboutphp.com/php-pdo-crud-tutorial-using-oop-bootstrap/">PHP PDO CRUD Tutorial Using OOP with Bootstrap</a>
+						</li>
+				</ul>
+		</aside>				</div>
+	</div><!-- #secondary -->
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .site-content -->
+
+	<div id="footer-area">
+		<div class="container footer-inner">
+			<div class="row">
+				
+				</div>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<div class="row">
+										<nav role="navigation" class="col-md-6">
+											</nav>
+					<div class="copyright col-md-6">
+						sparkling						Theme by <a href="http://colorlib.com/" target="_blank">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>					</div>
+				</div>
+			</div><!-- .site-info -->
+			<div class="scroll-to-top" style="display: block;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		</footer><!-- #colophon -->
+	</div>
+</div><!-- #page -->
+
+  <script type="text/javascript">
+    jQuery( document ).ready( function( $ ){
+      if ( $( window ).width() >= 767 ){
+        $( '.navbar-nav > li.menu-item > a' ).click( function(){
+            if( $( this ).attr('target') !== '_blank' ){
+                window.location = $( this ).attr( 'href' );
+            }else{
+                var win = window.open($( this ).attr( 'href' ), '_blank');
+                win.focus();
+            }
+        });
+      }
+    });
+  </script>
+
+<!-- Infolinks START -->
+<script type="text/javascript">jQuery(document).ready(function(){jQuery('.description').before('<span><!--INFOLINKS_OFF--></span>');jQuery('.description').after('<span><!--INFOLINKS_ON--></span>');jQuery('#headerimg').before('<span><!--INFOLINKS_OFF--></span>');jQuery('#headerimg').after('<span><!--INFOLINKS_ON--></span>');jQuery('h1').before('<span><!--INFOLINKS_OFF--></span>');jQuery('h1').after('<span><!--INFOLINKS_ON--></span>');jQuery('h1').before('<span><!--INFOLINKS_OFF--></span>');jQuery('h1').after('<span><!--INFOLINKS_ON--></span>');});</script>
+<script type="text/javascript">
+    var infolinks_pid = 1789931; 
+    var infolinks_plugin_version = "WP_3.1.9"; 
+    var infolinks_resources = "//resources.infolinks.com/js"; 
+</script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/infolinks_main.js.download"></script><iframe width="1px" height="1px" src="./User registration and login with email verification _ All About PHP toba_files/user_sync.html" style="display: none;"></iframe><img src="./User registration and login with email verification _ All About PHP toba_files/getuid" width="0" height="0" style="display: none;"><iframe width="1px" height="1px" src="./User registration and login with email verification _ All About PHP toba_files/usersyncup-an.html" style="display: none;"></iframe>
+<!-- Infolinks END --><script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/form.js.download"></script>
+<link rel="stylesheet" id="et-gf-open-sans-css" href="./User registration and login with email verification _ All About PHP toba_files/css(2)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var click_object = {"ajax_url":"http:\/\/www.allaboutphp.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/jquery.adrotate.clicktracker.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/scripts.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var rapidbar = {"admin_bar":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/rapidbar.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/jquery.uniform.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var rapidologySettings = {"ajaxurl":"http:\/\/www.allaboutphp.com\/wp-admin\/admin-ajax.php","pageurl":"http:\/\/www.allaboutphp.com\/login-registration-with-email-verification-forgot-password-using-php\/","stats_nonce":"010471cddd","subscribe_nonce":"8a461f1abb","center_nonce":"a32f007b0c"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/custom.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/idle-timer.min.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/skip-link-focus-fix.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/wp-embed.min.js.download"></script>
+
+
+<script type="text/javascript" src="./User registration and login with email verification _ All About PHP toba_files/quantcast.js.download"></script><img src="./User registration and login with email verification _ All About PHP toba_files/adview.htm" style="display: none; width: 1px; height: 1px;"><img src="./User registration and login with email verification _ All About PHP toba_files/adview(1).htm" style="display: none; width: 1px; height: 1px;"><img src="./User registration and login with email verification _ All About PHP toba_files/adview(2).htm" style="display: none; width: 1px; height: 1px;"></body></html>

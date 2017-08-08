@@ -1,0 +1,21 @@
+jQuery(document).ready(function(){
+		
+		
+		//Scroll to top
+		//-----------------------------------------------
+		jQuery(window).scroll(function() {
+			if(jQuery(this).scrollTop() != 0) {
+				jQuery(".scrollToTop").fadeIn();	
+			} else {
+				jQuery(".scrollToTop").fadeOut();
+			}
+		});
+
+		jQuery(".scrollToTop").click(function() {
+			jQuery("body,html").animate({scrollTop:0},800);
+		});
+		
+		jQuery('.facebookApps').tooltip({placement: 'left'});
+		
+});
+
